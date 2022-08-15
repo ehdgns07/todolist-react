@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 const BodyOuter = styled.div`
@@ -16,8 +16,15 @@ const IdSpan = styled.span`
     margin-right : 3rem;
 `
 
+const BtnModify = styled.span`
+    
+`
+
 
 function Body({todos}) {
+
+    const [isModify, setIsModify] = useState(false);
+
     return (
         <BodyOuter>
             <BodyInner>{
@@ -26,6 +33,11 @@ function Body({todos}) {
                         <div>
                             <IdSpan>{item.id}</IdSpan>
                             <span>{item.todoText}</span>
+                            <BtnModify>
+                            <button onClick={()=>{setIsModify(true)}}>modify</button>
+                            <button>delete</button>
+                            </BtnModify>
+                            {isModify && <input type={"text"}/>}
                         </div>
                     )
                 })
