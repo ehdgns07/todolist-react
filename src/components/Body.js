@@ -34,7 +34,8 @@ function Body({todos}) {
                             <IdSpan>{item.id}</IdSpan>
                             <span>{item.todoText}</span>
                             <BtnModify>
-                            <button onClick={()=>{setIsModify(true)}}>modify</button>
+                            <button onClick={()=>{
+                                setIsModify(true)}}>modify</button>
                             <button>delete</button>
                             </BtnModify>
                             {isModify && <input type={"text"}/>}
