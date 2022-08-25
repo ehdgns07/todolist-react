@@ -25,7 +25,7 @@ function App() {
         const todo = { id: index, todoText: input }
         setTodos([...todos, todo]);
         localStorage.setItem(index.toString(), JSON.stringify(todo));
-        setIndex(index + 1);
+        setIndex(index + 1); 
 
     }
     const onChange = (e) => {
